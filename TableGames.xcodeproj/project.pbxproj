@@ -13,6 +13,8 @@
 		CA04D07F229ED5DB008C9244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA04D07D229ED5DB008C9244 /* LaunchScreen.storyboard */; };
 		CA04D088229EE099008C9244 /* ChooseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04D087229EE099008C9244 /* ChooseGameViewController.swift */; };
 		CA04D08B229EF735008C9244 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04D08A229EF735008C9244 /* Word.swift */; };
+		CA8C7207229F1DC6006EDAEF /* WordController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C7206229F1DC6006EDAEF /* WordController.swift */; };
+		CA8C720A229F1E03006EDAEF /* HangmanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8C7209229F1E03006EDAEF /* HangmanViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		CA04D080229ED5DB008C9244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA04D087229EE099008C9244 /* ChooseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameViewController.swift; sourceTree = "<group>"; };
 		CA04D08A229EF735008C9244 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		CA8C7206229F1DC6006EDAEF /* WordController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordController.swift; sourceTree = "<group>"; };
+		CA8C7209229F1E03006EDAEF /* HangmanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HangmanViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,8 +61,8 @@
 			isa = PBXGroup;
 			children = (
 				CA04D078229ED5D9008C9244 /* Main.storyboard */,
-				CA04D08C229EF748008C9244 /* Models */,
 				CA04D089229EE0A2008C9244 /* ViewControllers */,
+				CA8C720D229F1E56006EDAEF /* Hangman */,
 				CA04D086229ED618008C9244 /* Resources */,
 			);
 			path = TableGames;
@@ -89,6 +93,32 @@
 				CA04D08A229EF735008C9244 /* Word.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		CA8C7208229F1DCD006EDAEF /* Model Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA8C7206229F1DC6006EDAEF /* WordController.swift */,
+			);
+			path = "Model Controllers";
+			sourceTree = "<group>";
+		};
+		CA8C720B229F1E0B006EDAEF /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA8C7209229F1E03006EDAEF /* HangmanViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		CA8C720D229F1E56006EDAEF /* Hangman */ = {
+			isa = PBXGroup;
+			children = (
+				CA8C720B229F1E0B006EDAEF /* View Controllers */,
+				CA8C7208229F1DCD006EDAEF /* Model Controllers */,
+				CA04D08C229EF748008C9244 /* Models */,
+			);
+			path = Hangman;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -165,6 +195,8 @@
 				CA04D075229ED5D9008C9244 /* AppDelegate.swift in Sources */,
 				CA04D088229EE099008C9244 /* ChooseGameViewController.swift in Sources */,
 				CA04D08B229EF735008C9244 /* Word.swift in Sources */,
+				CA8C7207229F1DC6006EDAEF /* WordController.swift in Sources */,
+				CA8C720A229F1E03006EDAEF /* HangmanViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

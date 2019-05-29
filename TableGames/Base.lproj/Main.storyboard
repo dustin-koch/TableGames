@@ -26,7 +26,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Table Games" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Js-I1-nFU">
-                                <rect key="frame" x="368" y="580" width="99" height="21"/>
+                                <rect key="frame" x="367.5" y="580.5" width="99" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -47,10 +47,10 @@
             </objects>
             <point key="canvasLocation" x="1004.3478260869566" y="125.89285714285714"/>
         </scene>
-        <!--View Controller-->
+        <!--Hangman View Controller-->
         <scene sceneID="9Kc-ae-pWp">
             <objects>
-                <viewController id="Efk-aF-Urs" sceneMemberID="viewController">
+                <viewController id="Efk-aF-Urs" customClass="HangmanViewController" customModule="TableGames" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NFk-Mw-tSa">
                         <rect key="frame" x="0.0" y="0.0" width="834" height="1112"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -349,13 +349,15 @@
                                 <state key="normal" title="RESET GAME">
                                     <color key="titleColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetGameButtonTapped:" destination="Efk-aF-Urs" eventType="touchUpInside" id="tFq-ht-ooD"/>
+                                </connections>
                             </button>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="phE-vU-Fq5">
-                                <rect key="frame" x="160" y="730" width="515" height="85"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="phE-vU-Fq5">
+                                <rect key="frame" x="160" y="730" width="514" height="85"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="95" translatesAutoresizingMaskIntoConstraints="NO" id="pzZ-n6-nRR">
-                                        <rect key="frame" x="40.5" y="0.0" width="434" height="60"/>
+                                        <rect key="frame" x="40" y="0.0" width="434" height="60"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="W" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zi6-Bz-QwA">
                                                 <rect key="frame" x="0.0" y="0.0" width="47" height="60"/>
@@ -383,23 +385,23 @@
                                             </label>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="h45-cR-LHu">
-                                        <rect key="frame" x="0.0" y="75" width="515" height="10"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalCompressionResistancePriority="751" distribution="fillProportionally" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="h45-cR-LHu">
+                                        <rect key="frame" x="0.0" y="75" width="514" height="10"/>
                                         <subviews>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwq-g4-bOc">
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Jwq-g4-bOc">
                                                 <rect key="frame" x="0.0" y="0.0" width="110" height="10"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKj-2X-I9A">
-                                                <rect key="frame" x="135" y="0.0" width="110" height="10"/>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QKj-2X-I9A">
+                                                <rect key="frame" x="135" y="0.0" width="109.5" height="10"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssn-WO-NKY">
-                                                <rect key="frame" x="270" y="0.0" width="110" height="10"/>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ssn-WO-NKY">
+                                                <rect key="frame" x="269.5" y="0.0" width="110" height="10"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqZ-Yl-ib5">
-                                                <rect key="frame" x="405" y="0.0" width="110" height="10"/>
+                                            <view userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pqZ-Yl-ib5">
+                                                <rect key="frame" x="404.5" y="0.0" width="109.5" height="10"/>
                                                 <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                                             </view>
                                         </subviews>
@@ -409,10 +411,32 @@
                                     </stackView>
                                 </subviews>
                             </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="jail" translatesAutoresizingMaskIntoConstraints="NO" id="5uM-aO-lM1">
+                                <rect key="frame" x="96" y="259" width="320" height="336.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="350" id="8Pi-wv-JYv"/>
+                                    <constraint firstAttribute="width" constant="350" id="Bjj-As-qp6"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Dk6-8N-YAK" firstAttribute="trailing" secondItem="phE-vU-Fq5" secondAttribute="trailing" constant="160" id="R8P-ZY-OrV"/>
+                            <constraint firstItem="phE-vU-Fq5" firstAttribute="leading" secondItem="Dk6-8N-YAK" secondAttribute="leading" constant="160" id="XUz-Yl-UD4"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Dk6-8N-YAK"/>
                     </view>
+                    <connections>
+                        <outlet property="countdownValueLabel" destination="ROd-qe-h5T" id="Hwt-g3-a0C"/>
+                        <outlet property="dashesStackView" destination="h45-cR-LHu" id="4zk-73-9Sc"/>
+                        <outlet property="dogImageView" destination="DDM-HB-dIS" id="RIT-js-f6T"/>
+                        <outlet property="firstLetterLabel" destination="zi6-Bz-QwA" id="jv4-Lx-Je4"/>
+                        <outlet property="fourthLetterLabel" destination="Hv8-Wy-JB1" id="ymv-cc-Cbc"/>
+                        <outlet property="jailImageView" destination="5uM-aO-lM1" id="mNf-Nf-3ne"/>
+                        <outlet property="progressBar" destination="Zuc-I8-0DB" id="s1B-LZ-w89"/>
+                        <outlet property="secondLetterLabel" destination="jjg-Nh-wJm" id="COA-dc-MtE"/>
+                        <outlet property="thirdLetterLabel" destination="hXj-L4-KHv" id="vz2-yb-MQw"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DF3-Ee-SFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
