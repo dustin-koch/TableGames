@@ -11,6 +11,7 @@
 		CA04D07A229ED5D9008C9244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA04D078229ED5D9008C9244 /* Main.storyboard */; };
 		CA04D07C229ED5DB008C9244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA04D07B229ED5DB008C9244 /* Assets.xcassets */; };
 		CA04D07F229ED5DB008C9244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA04D07D229ED5DB008C9244 /* LaunchScreen.storyboard */; };
+		CA04D088229EE099008C9244 /* ChooseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04D087229EE099008C9244 /* ChooseGameViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		CA04D07B229ED5DB008C9244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CA04D07E229ED5DB008C9244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA04D080229ED5DB008C9244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CA04D087229EE099008C9244 /* ChooseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 			isa = PBXGroup;
 			children = (
 				CA04D078229ED5D9008C9244 /* Main.storyboard */,
+				CA04D089229EE0A2008C9244 /* ViewControllers */,
 				CA04D086229ED618008C9244 /* Resources */,
 			);
 			path = TableGames;
@@ -67,6 +70,14 @@
 				CA04D080229ED5DB008C9244 /* Info.plist */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		CA04D089229EE0A2008C9244 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				CA04D087229EE099008C9244 /* ChooseGameViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA04D075229ED5D9008C9244 /* AppDelegate.swift in Sources */,
+				CA04D088229EE099008C9244 /* ChooseGameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +299,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TableGames/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/TableGames/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -295,7 +308,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rabbitholefashion.TableGames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Debug;
 		};
@@ -304,7 +317,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = TableGames/Info.plist;
+				DEVELOPMENT_TEAM = "";
+				INFOPLIST_FILE = "$(SRCROOT)/TableGames/Resources/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +326,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.rabbitholefashion.TableGames;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 2;
 			};
 			name = Release;
 		};
