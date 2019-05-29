@@ -12,6 +12,7 @@
 		CA04D07C229ED5DB008C9244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CA04D07B229ED5DB008C9244 /* Assets.xcassets */; };
 		CA04D07F229ED5DB008C9244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CA04D07D229ED5DB008C9244 /* LaunchScreen.storyboard */; };
 		CA04D088229EE099008C9244 /* ChooseGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04D087229EE099008C9244 /* ChooseGameViewController.swift */; };
+		CA04D08B229EF735008C9244 /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA04D08A229EF735008C9244 /* Word.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		CA04D07E229ED5DB008C9244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CA04D080229ED5DB008C9244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CA04D087229EE099008C9244 /* ChooseGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseGameViewController.swift; sourceTree = "<group>"; };
+		CA04D08A229EF735008C9244 /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,6 +57,7 @@
 			isa = PBXGroup;
 			children = (
 				CA04D078229ED5D9008C9244 /* Main.storyboard */,
+				CA04D08C229EF748008C9244 /* Models */,
 				CA04D089229EE0A2008C9244 /* ViewControllers */,
 				CA04D086229ED618008C9244 /* Resources */,
 			);
@@ -78,6 +81,14 @@
 				CA04D087229EE099008C9244 /* ChooseGameViewController.swift */,
 			);
 			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		CA04D08C229EF748008C9244 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				CA04D08A229EF735008C9244 /* Word.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 			files = (
 				CA04D075229ED5D9008C9244 /* AppDelegate.swift in Sources */,
 				CA04D088229EE099008C9244 /* ChooseGameViewController.swift in Sources */,
+				CA04D08B229EF735008C9244 /* Word.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
