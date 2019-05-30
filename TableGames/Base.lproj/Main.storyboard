@@ -539,6 +539,7 @@
                         <outlet property="progressBar" destination="Zuc-I8-0DB" id="s1B-LZ-w89"/>
                         <outlet property="secondLetterLabel" destination="DQF-DL-rNk" id="e4b-9N-4cm"/>
                         <outlet property="thirdLetterLabel" destination="yfg-VW-VEI" id="L71-hQ-nCH"/>
+                        <outlet property="titleLabel" destination="Tyb-Z4-cxv" id="5eP-oC-tDn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DF3-Ee-SFd" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -11,6 +11,7 @@ import UIKit
 class HangmanViewController: UIViewController {
     
     //MARK: - Outlets
+    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var jailImageView: UIImageView!
     @IBOutlet weak var dogImageView: UIImageView!
     @IBOutlet weak var countdownValueLabel: UILabel!
@@ -19,6 +20,7 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var secondLetterLabel: UILabel!
     @IBOutlet weak var thirdLetterLabel: UILabel!
     @IBOutlet weak var fourthLetterLabel: UILabel!
+
     
     
     
@@ -32,6 +34,7 @@ class HangmanViewController: UIViewController {
         clearLetters()
         drawAndRemoveNewWord()
         updateJailImage()
+        progressBar.setProgress(0.0, animated: true)
         print(word)
     }
     
@@ -45,6 +48,33 @@ class HangmanViewController: UIViewController {
     }
 
     //MARK: - Helper Functions
+    
+    //Check if all letters are filled (NEED A TIMES WON AREA? - Needs persistence)
+    func checkWinner() {
+        if (firstLetterLabel?.text != "    ") &&
+            (secondLetterLabel.text != "    ") &&
+            (thirdLetterLabel.text != "    ") &&
+            (fourthLetterLabel.text != "    ") {
+            //Change dog to crazy colors
+            dogImageView.image = UIImage(named: "dog3")
+            //insert wait statement
+            dogImageView.image = UIImage(named: "dog2")
+            //insert wait statement
+            dogImageView.image = UIImage(named: "dog4")
+            //Change headline that you WIN!
+            titleLabel.text = "YOU WIN!!!"
+            
+        }
+    }
+    
+    func loser() {
+        titleLabel.text = "YOU LOSE 😭"
+        //Controller popup?
+        //Disable actions from running
+        //Draw attention to start over button?
+        
+    }
+    
     func clearLetters() {
         firstLetterLabel.text = "    "
         secondLetterLabel.text = "    "
@@ -61,7 +91,7 @@ class HangmanViewController: UIViewController {
     func updateJailImage() {
         let opacity = jailOpacity
         jailImageView.image = UIImage(named: "jail")?.alpha(CGFloat(opacity))
-        
+        checkWinner()
     }
     
     func guessed(letter: Character, forWord: String) {
@@ -98,11 +128,16 @@ class HangmanViewController: UIViewController {
         if countIncorrect == 4 {
             //stuff to do if letter is incorrect
             count -= 1
-            let status = Float((count - 5) / 5).magnitude
-            progressBar.setProgress(status, animated: true)
             countdownValueLabel.text = String(count)
+            let status = (Float(count - 5) / 5).magnitude
+            progressBar.setProgress(status, animated: true)
+            if count == 0 {
+                loser()
+            }
         }
     }//END of Guessed Function
+    
+    
 }
 
 extension HangmanViewController {
