@@ -31,6 +31,7 @@ class HangmanViewController: UIViewController {
         super.viewDidLoad()
         clearLetters()
         drawAndRemoveNewWord()
+        updateJailImage()
         print(word)
     }
     
@@ -42,28 +43,13 @@ class HangmanViewController: UIViewController {
         //refresh try counter and opacity of jail
         print(word)
     }
-    @IBAction func aTapped(_ sender: UIButton) {
-        //see if letter is in the word (guessed helper func)
-        guessed(letter: "A", forWord: word)
-        
-    }
-    @IBAction func bTapped(_ sender: UIButton) {
-    }
-    @IBAction func cTapped(_ sender: UIButton) {
-    }
-    @IBAction func dTapped(_ sender: UIButton) {
-    }
-    @IBAction func eTapped(_ sender: UIButton) {
-    }
-    //Finish adding actions here
-
 
     //MARK: - Helper Functions
     func clearLetters() {
-        firstLetterLabel.text = ""
-        secondLetterLabel.text = ""
-        thirdLetterLabel.text = ""
-        fourthLetterLabel.text = ""
+        firstLetterLabel.text = "    "
+        secondLetterLabel.text = "    "
+        thirdLetterLabel.text = "    "
+        fourthLetterLabel.text = "    "
     }
     
     func drawAndRemoveNewWord() {
@@ -117,6 +103,87 @@ class HangmanViewController: UIViewController {
             countdownValueLabel.text = String(count)
         }
     }//END of Guessed Function
+}
+
+extension HangmanViewController {
+    @IBAction func aTapped(_ sender: UIButton) {
+        guessed(letter: "A", forWord: word)
+    }
+    @IBAction func bTapped(_ sender: UIButton) {
+        guessed(letter: "B", forWord: word)
+    }
+    @IBAction func cTapped(_ sender: UIButton) {
+        guessed(letter: "C", forWord: word)
+    }
+    @IBAction func dTapped(_ sender: UIButton) {
+        guessed(letter: "D", forWord: word)
+    }
+    @IBAction func eTapped(_ sender: UIButton) {
+        guessed(letter: "E", forWord: word)
+    }
+    @IBAction func fTapped(_ sender: UIButton) {
+        guessed(letter: "F", forWord: word)
+    }
+    @IBAction func gTapped(_ sender: UIButton) {
+        guessed(letter: "G", forWord: word)
+    }
+    @IBAction func hTapped(_ sender: UIButton) {
+        guessed(letter: "H", forWord: word)
+    }
+    @IBAction func iTapped(_ sender: UIButton) {
+        guessed(letter: "I", forWord: word)
+    }
+    @IBAction func jTapped(_ sender: UIButton) {
+        guessed(letter: "J", forWord: word)
+    }
+    @IBAction func kTapped(_ sender: UIButton) {
+        guessed(letter: "K", forWord: word)
+    }
+    @IBAction func lTapped(_ sender: UIButton) {
+        guessed(letter: "L", forWord: word)
+    }
+    @IBAction func mTapped(_ sender: UIButton) {
+        guessed(letter: "M", forWord: word)
+    }
+    @IBAction func nTapped(_ sender: UIButton) {
+        guessed(letter: "N", forWord: word)
+    }
+    @IBAction func oTapped(_ sender: UIButton) {
+        guessed(letter: "O", forWord: word)
+    }
+    @IBAction func pTapped(_ sender: UIButton) {
+        guessed(letter: "P", forWord: word)
+    }
+    @IBAction func qTapped(_ sender: UIButton) {
+        guessed(letter: "Q", forWord: word)
+    }
+    @IBAction func rTapped(_ sender: UIButton) {
+        guessed(letter: "R", forWord: word)
+    }
+    @IBAction func sTapped(_ sender: UIButton) {
+        guessed(letter: "S", forWord: word)
+    }
+    @IBAction func tTapped(_ sender: UIButton) {
+        guessed(letter: "T", forWord: word)
+    }
+    @IBAction func uTapped(_ sender: UIButton) {
+        guessed(letter: "U", forWord: word)
+    }
+    @IBAction func vTapped(_ sender: UIButton) {
+        guessed(letter: "V", forWord: word)
+    }
+    @IBAction func wTapped(_ sender: UIButton) {
+        guessed(letter: "W", forWord: word)
+    }
+    @IBAction func xTapped(_ sender: UIButton) {
+        guessed(letter: "X", forWord: word)
+    }
+    @IBAction func yTapped(_ sender: UIButton) {
+        guessed(letter: "Y", forWord: word)
+    }
+    @IBAction func zTapped(_ sender: UIButton) {
+        guessed(letter: "Z", forWord: word)
+    }
 }//END OF CLASS
 
 //Extension to change opacity of images
