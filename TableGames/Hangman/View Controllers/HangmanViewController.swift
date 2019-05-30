@@ -44,6 +44,7 @@ class HangmanViewController: UIViewController {
     }
     @IBAction func aTapped(_ sender: UIButton) {
         //see if letter is in the word (guessed helper func)
+        guessed(letter: "A", forWord: word)
         
     }
     @IBAction func bTapped(_ sender: UIButton) {
@@ -56,9 +57,7 @@ class HangmanViewController: UIViewController {
     }
     //Finish adding actions here
 
-    
-    
-    
+
     //MARK: - Helper Functions
     func clearLetters() {
         firstLetterLabel.text = ""
@@ -76,44 +75,48 @@ class HangmanViewController: UIViewController {
     func updateJailImage() {
         let opacity = jailOpacity
         jailImageView.image = UIImage(named: "jail")?.alpha(CGFloat(opacity))
+        
     }
     
     func guessed(letter: Character, forWord: String) {
-        //for loop to check/repeat this?
-        if forWord.contains(letter) {
-            //stuff to do if guess letter correctly
-            //update label for correct letter guessed
-            
-            jailOpacity -= 0.25
-            updateJailImage()
-            
-            guard let range: Range<String.Index> = forWord.range(of: String(letter)) else { return }
-            let index: Int = forWord.distance(from: forWord.startIndex, to: range.lowerBound)
-            
-            switch index {
-            case 0:
-                print("insert here")
-            case 1:
-                print("insert here")
-            case 2:
-                print("insert here")
-            case 3:
-                print("insert here")
-            default:
-                print("Error here 🍋")
+        var countIncorrect = 0
+        for check in forWord {
+            if check == letter {
+                guard let range: Range<String.Index> = forWord.range(of: String(check)) else { return }
+                let index: Int = forWord.distance(from: forWord.startIndex, to: range.lowerBound)
+                switch index {
+                case 0:
+                    firstLetterLabel.text = String(check)
+                    jailOpacity -= 0.25
+                    updateJailImage()
+                case 1:
+                    secondLetterLabel.text = String(check)
+                    jailOpacity -= 0.25
+                    updateJailImage()
+                case 2:
+                    thirdLetterLabel.text = String(check)
+                    jailOpacity -= 0.25
+                    updateJailImage()
+                case 3:
+                    fourthLetterLabel.text = String(check)
+                    jailOpacity -= 0.25
+                    updateJailImage()
+                default:
+                    print("Error here 🍋")
+                }
             }
-            
-            
-            
-        } else {
+            else {
+                countIncorrect += 1
+            }
+        }//END OF FOR IN LOOP
+        if countIncorrect == 4 {
             //stuff to do if letter is incorrect
             count -= 1
             let status = Float((count - 5) / 5).magnitude
             progressBar.setProgress(status, animated: true)
             countdownValueLabel.text = String(count)
         }
-    }
-
+    }//END of Guessed Function
 }//END OF CLASS
 
 //Extension to change opacity of images
