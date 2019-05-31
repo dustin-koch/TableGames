@@ -20,14 +20,13 @@ class HangmanViewController: UIViewController {
     @IBOutlet weak var secondLetterLabel: UILabel!
     @IBOutlet weak var thirdLetterLabel: UILabel!
     @IBOutlet weak var fourthLetterLabel: UILabel!
-
-    
-    
+    @IBOutlet weak var lettersGuessedLabel: UILabel!
     
     //MARK: - Properties
     var word = ""
     var count = 5
     var jailOpacity = 1.0
+    var lettersGuessed = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,12 +38,24 @@ class HangmanViewController: UIViewController {
     }
     
     //MARK: - Actions
-    @IBAction func resetGameButtonTapped(_ sender: Any) {
+    fileprivate func newGame() {
+        jailOpacity = 1.0
+        count = 5
+        lettersGuessed = ""
+        DispatchQueue.main.async {
+            self.titleLabel.text = "SAVE THE DOG"
+            self.dogImageView.image = UIImage(named: "dog4")
+            self.countdownValueLabel.text = String(self.count)
+            self.lettersGuessedLabel.text = "Letters guessed: "
+        }
         clearLetters()
         drawAndRemoveNewWord()
         updateJailImage()
-        //refresh try counter and opacity of jail
         print(word)
+    }
+    
+    @IBAction func resetGameButtonTapped(_ sender: Any) {
+        newGame()
     }
 
     //MARK: - Helper Functions
@@ -56,11 +67,16 @@ class HangmanViewController: UIViewController {
             (thirdLetterLabel.text != "    ") &&
             (fourthLetterLabel.text != "    ") {
             //Change dog to crazy colors
-            dogImageView.image = UIImage(named: "dog3")
-            //insert wait statement
-            dogImageView.image = UIImage(named: "dog2")
-            //insert wait statement
-            dogImageView.image = UIImage(named: "dog4")
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(1)) {
+                self.dogImageView.image = UIImage(named: "dog3")
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+                self.dogImageView.image = UIImage(named: "dog1")
+            }
+            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3)) {
+                self.dogImageView.image = UIImage(named: "dog2")
+            }
+            
             //Change headline that you WIN!
             titleLabel.text = "YOU WIN!!!"
             
@@ -69,9 +85,7 @@ class HangmanViewController: UIViewController {
     
     func loser() {
         titleLabel.text = "YOU LOSE 😭"
-        //Controller popup?
-        //Disable actions from running
-        //Draw attention to start over button?
+        presentAlertController()
         
     }
     
@@ -92,6 +106,15 @@ class HangmanViewController: UIViewController {
         let opacity = jailOpacity
         jailImageView.image = UIImage(named: "jail")?.alpha(CGFloat(opacity))
         checkWinner()
+    }
+    
+    func presentAlertController(){
+        let alertController = UIAlertController(title: "OUT OF CHANCES", message: "You didn't save the 🐶", preferredStyle: .alert)
+        let addAction = UIAlertAction.init(title: "PLAY AGAIN", style: .default) { (_) in
+            self.newGame()
+        }
+        alertController.addAction(addAction)
+        self.present(alertController, animated: true, completion: nil)
     }
     
     func guessed(letter: Character, forWord: String) {
@@ -126,19 +149,21 @@ class HangmanViewController: UIViewController {
             }
         }//END OF FOR IN LOOP
         if countIncorrect == 4 {
-            //stuff to do if letter is incorrect
+            //stuff to do if letter is incorrect (if letter didn't match 4 times)
             count -= 1
             countdownValueLabel.text = String(count)
             let status = (Float(count - 5) / 5).magnitude
             progressBar.setProgress(status, animated: true)
+            //letters guessed
+            lettersGuessed += "\(letter) "
+            lettersGuessedLabel.text = "Letters guessed: \(lettersGuessed)"
+            //losing game
             if count == 0 {
                 loser()
             }
         }
     }//END of Guessed Function
-    
-    
-}
+}//END OF CLASSS
 
 extension HangmanViewController {
     @IBAction func aTapped(_ sender: UIButton) {
@@ -231,3 +256,19 @@ extension UIImage {
         return newImage!
     }
 }
+
+
+//func presentAlertController(){
+//    let alertController = UIAlertController(title: "Shopping Items", message: "Add shopping item here 👇🏽", preferredStyle: .alert)
+//    alertController.addTextField { (textField) in
+//        textField.placeholder = "Enter item..."
+//    }
+//    let dismissAction = UIAlertAction.init(title: "Cancel", style: .cancel, handler: nil)
+//    let addAction = UIAlertAction.init(title: "Add Item", style: .default) { (_) in
+//        guard let itemText = alertController.textFields?.first?.text,
+//            alertController.textFields?.first?.text != "" else { return }
+//        ItemController.shared.createItem(name: itemText)
+//    }
+//    alertController.addAction(addAction)
+//    self.present(alertController, animated: true, completion: nil)
+//}

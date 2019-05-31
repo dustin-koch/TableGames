@@ -21,7 +21,7 @@ struct Word {
                                "HATE","HEAL","HUNT",
                                "ICED","ICON","IDEA","IRON","ITEM",
                                "JAIL","JADE","JOCK","JOIN","JURY",
-                               "KALE","KICK","KNOT",
+                               "KALE","KNOT",
                                "LADY","LAWN","LION",
                                "MUTE","MADE","MESH","MEAN","MEAT",
                                "NERD","NOTE","NAVY",
